@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> <!--character encoding specification-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+    <title>Re-Use Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  </head>
+  <body>
+  <div class="container">
+      <br>
+      <h1 class="text-center"> <!--title-->
+          Re-Use Tracker
+      </h1>
+      <br>
+      <!--here I created all the forms-->
+      <form id="myForm" autocomplete="off"> <!--giving it an id which we can then call from JS to retreive data when the search button is clicked-->
+          <div class="form-group"> <!--a form/search bar-->
+            <label>Search by Keyword:</label>
+            <input class="form-control" type="text" id="search" placeholder="keyword" required>
+          </div>
+          <div class="form-group">
+            <label for="duration">Select Duration:</label>
+            <select class="form-control" id="duration">
+              <option>any</option>
+              <option>short</option>
+              <option>medium</option>
+              <option>long</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="order">Sort by:</label>
+            <select class="form-control" id="order">
+              <option>relevance</option>
+              <option>viewCount</option>
+              <option>videoCount</option>
+              <option>title</option>
+              <option>rating</option>
+              <option>date</option>
+            </select>
+          </div>
+          <div class="form-group">
+              <label for="fromdate">Before:</label>
+              <input type="text" class="form-control" name="" id="beforedate">
+          </div>
+          <div class="form-group">
+            <label for="fromdate">After:</label>
+            <input type="text" class="form-control" name="" id="afterdate">
+        </div>
+          <div class="form-group"> <!--button for sumbitting keyword(s) and filters-->
+              <button id="btn" class="btn btn-outline-danger btn-block"> <!---->
+                  Search for Content
+              </button>
+          </div>
+      </form>
+      <table style="display: none;" id="table" class="table table-striped"> <!--this is a table with your data. add "Date Published"-->
+        <thead>
+          <tr>
+            <th>Thumbnail</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Date</th> <!--can put it away perhaps-->
+            <th>Channel</th>
+            <th>Statistics</th>
+            <th>Comments</th>
+          
+          </tr>
+        </thead>
+        <tbody id="results">
+        </tbody>
+      </table>
+      <div id="pager"> <!--here we define pagination-->
+		<ul id="pagination" class="pagination-sm"></ul>
+	</div>
+  </div>
+</body> <!--here you can find all the dependencies that are used-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- Ajax is used to communicate with web pages and web servers.-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script> <!-- Popper. js is a positioning engine, its purpose is to calculate the position of an element to make it possible to position it near a given reference element.-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="jquery.twbsPagination.min.js"></script> <!--this one is for the pagination-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script> <!--with this one we can select dates-->
+  <script>
+      $("#beforedate").datepicker({ //this displays the date table
+
+      })
+      $("#afterdate").datepicker({
+
+})
+
+  </script>
+  <script src="script.js"></script>
+</html>
